@@ -1,0 +1,46 @@
+<div class="container" style="margin-top: 7rem;">
+  <div class="form-container">
+    <h2>{{title}}</h2>
+    <form (ngSubmit)="addCategory()">
+      <div class="form-group">
+        <input type="text" [(ngModel)]="category.name" name="name" class="form-control" placeholder="Category Name"
+          required>
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="category.description" name="description" class="form-control"
+          placeholder="Category Description" required>
+      </div>
+      <button type="submit" class="btn btn-primary">{{title}}</button>
+    </form>
+  </div>
+
+  <div class="categories-container">
+    <h2>Categories</h2>
+    <table class="table table-hover table-responsive">
+      <thead class="thead-light">
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories| paginate: { itemsPerPage: 10, currentPage: p}">
+          <td>{{ category.name }}</td>
+          <td>{{ category.description }}</td>
+
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="updateCategory(category._id, category)">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn btn-danger btn-sm" (click)="deleteCategory(category._id)">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </table>
+  </div>
+</div>

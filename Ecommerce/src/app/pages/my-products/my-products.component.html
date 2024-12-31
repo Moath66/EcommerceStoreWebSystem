@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <h2>Product List</h2>
+  <table class="table table-hover table-responsive">
+    <thead class="thead-light">
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Categories</th>
+        <th>Size</th>
+        <th>Color</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.title }}</td>
+        <td>{{ product.description }}</td>
+        <td><img [src]="'http://localhost:3000/' + product.img" alt="{{ product.title }}" width="50"></td>
+        <td>{{ product.categories[0].name }}</td>
+        <td>{{ product.size }}</td>
+        <td>{{ product.color }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="editProduct(product)">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="confirmDelete(product._id)">
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': selectedProductId}"
+    [ngStyle]="{display: selectedProductId ? 'block' : 'none'}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirm Delete</h5>
+          <button type="button" class="close" (click)="cancelDelete()">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this product?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="cancelDelete()">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="deleteProduct()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

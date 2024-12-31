@@ -1,0 +1,21 @@
+.card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+}
+
+.invalid-feedback {
+  display: block;
+}
+
+.input-group-append .btn-danger {
+  border-radius: 0;
+}
+
+.btn-secondary {
+  margin-top: 10px;
+}
