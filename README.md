@@ -24,8 +24,6 @@ The project is organized into two main folders:
 - **API Integration**: Communication between frontend and backend using JSON-based APIs.
 - **MongoDB Integration**: Efficient product and user data management.
 
-## Installation Instructions
-
 ### Prerequisites
 Ensure you have the following installed:
 - **Node.js** (for running Angular and backend API)
