@@ -1,6 +1,5 @@
 <<<<<<< HEAD
-# EcommerceStoreWebSystem
-Developed Ecommerce Store Web System by utilizing Angular, JSON-based API integration and MongoDB
+(Content from your current branch)
 =======
-First commit
+(Content from the branch being merged)
 >>>>>>> master
