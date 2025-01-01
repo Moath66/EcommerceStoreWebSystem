@@ -1,0 +1,8 @@
+.table img {
+  max-width: 50px;
+  height: auto;
+}
+
+.modal.show {
+  display: block;
+}
